@@ -12,6 +12,8 @@ public sealed class SpectrumDataManager : MonoBehaviour
     [Header("Links")]
     [SerializeField] private MusicManager _musicManager;
 
+    private void Awake() => ClearData();
+    
     public void ClearData()
     {
         _samples = new float[_sampleRange];
@@ -19,23 +21,7 @@ public sealed class SpectrumDataManager : MonoBehaviour
         _outputData = new float[_sampleRange];
     }
 
-    public int GetSampleRange() => _sampleRange;
-
-    public float[] GetSamples() => _samples;
-
-    public float[] GetOutputData() => _outputData;
-    
-    private void Awake()
-    {
-        ClearData();
-    }
-
-    private void Update()
-    {
-        SetSpectrumData();
-    }
-
-    private void SetSpectrumData()
+    public void UpdateAudioData()
     {
         AudioSource currentSourse = _musicManager.GetMusicSourse();
 
@@ -43,4 +29,10 @@ public sealed class SpectrumDataManager : MonoBehaviour
         
         currentSourse.GetOutputData(_outputData, 0);
     }
+
+    public int GetSampleRange() => _sampleRange;
+
+    public float[] GetSamples() => _samples;
+
+    public float[] GetOutputData() => _outputData;    
 }

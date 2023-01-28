@@ -35,7 +35,7 @@ public sealed class BeatDetection : MonoBehaviour
         _energyDetector = new EnergyDetector(_spectrumDataManager);
     }
 
-	private void Update()
+	public void UpdateBeatDetection()
     {
         CheckForBeat(); 
 

@@ -30,7 +30,7 @@ public sealed class SpectrumGroupsManager : MonoBehaviour
 
     [SerializeField] private SpectrumDataManager _spectrumDataManager;
 
-    private void Start()
+    private void Awake()
     {
         _frequencyGroups = new float[_amountOfGroups];
 
@@ -47,7 +47,7 @@ public sealed class SpectrumGroupsManager : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    public void UpdateAudioGroups()
     {
         CreateFrequencyGroups();
 

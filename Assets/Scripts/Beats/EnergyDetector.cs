@@ -5,7 +5,6 @@ public sealed class EnergyDetector
     private float[] _energyHistory = new float[DetectionSettings.MaxHistory];
     private float[] _energyAverageHistory = new float[DetectionSettings.MaxHistory];   
     private float[] _frames;
-    private float _lastTimeBeatActivated;
     private int _numberHistory;
 
     private SpectrumDataManager _spectrumDataManager;
@@ -13,8 +12,6 @@ public sealed class EnergyDetector
     public EnergyDetector(SpectrumDataManager spectrumDataManager)
     {
         _spectrumDataManager = spectrumDataManager;
-
-        _lastTimeBeatActivated = Time.time;
 
         _frames = new float[_spectrumDataManager.GetSampleRange()];
     }
@@ -43,16 +40,7 @@ public sealed class EnergyDetector
         _energyHistory[circularHistory] = instant;
         _energyAverageHistory[circularHistory] = firstDifference;
         
-        if (IsFarEnoughFromLastBeat() && detectedEnergyBeat == true)
-        {
-            _lastTimeBeatActivated = Time.time;
-
-            return true;
-        }
-        else 
-        {
-            return false;
-        }
+        return detectedEnergyBeat;
     }
     
     private float GetInstantEnergyLevel()
@@ -117,6 +105,4 @@ public sealed class EnergyDetector
 
         return energyHistoryAverage;
     }
-    
-    private bool IsFarEnoughFromLastBeat() => Time.time - _lastTimeBeatActivated >= DetectionSettings.MinimalBeatSeparation;
 }
