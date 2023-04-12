@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 42598503}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &62469953
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.845
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _decreaseSpeed: 0.015
   _decreaseMultyplyer: 2
-  _maxObjectScale: 25
+  _maxObjectScale: 15
 --- !u!1 &320950608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,8 +1564,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 556326289}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &582770060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,8 +1734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 607627472}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!114 &607627472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,8 +2240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 760784883}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &809587221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,18 +2326,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClips:
   - {fileID: 8300000, guid: 1e60088d9518a184695f80c3855c201c, type: 3}
-  - {fileID: 8300000, guid: edefed2a8efd2b145a24848137d43c3a, type: 3}
-  - {fileID: 8300000, guid: 27377313ecc1a4b419b90555ed79c2f6, type: 3}
-  - {fileID: 8300000, guid: b5444391a4bbef147a8d45497aca5a12, type: 3}
-  - {fileID: 8300000, guid: 570501d607ddcf347a8427aef683ab5c, type: 3}
-  - {fileID: 8300000, guid: c4d01c94023462a4798661d0973452d7, type: 3}
   - {fileID: 8300000, guid: 7e42665a83215d84e9308747a4d462e7, type: 3}
   - {fileID: 8300000, guid: a3761be0277a20040a4599de767a92db, type: 3}
   - {fileID: 8300000, guid: 9da8926d13738074e9b59a976b51ef5b, type: 3}
-  - {fileID: 8300000, guid: a397c3ddb05260740b8694bd01f63cc2, type: 3}
-  - {fileID: 8300000, guid: fea8be43bbb1426418012561094a6a5d, type: 3}
-  - {fileID: 8300000, guid: 5bd6faeff9f5f82429306f0e5daa4138, type: 3}
-  - {fileID: 8300000, guid: 8b9f115e251497a4d8faf2198f4fa492, type: 3}
+  - {fileID: 8300000, guid: d84c2e10a1130df4396fe68171c24eb3, type: 3}
+  - {fileID: 8300000, guid: 2cba4e36ca1a18742a8b5361dba505e5, type: 3}
   _musicManager: {fileID: 1388485059}
 --- !u!4 &1010946765
 Transform:
@@ -2539,8 +2532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 1020102184}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &1206250096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,8 +2767,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 1372914018}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &1379765152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3165,8 +3158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 1542310304}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &1543290247
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,8 +3421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualiser: {fileID: 1611220876}
-  _defaultDecreaseSpeed: 0.005
-  _deacreaseSpeedMultiplier: 1.2
+  _defaultDecreaseSpeed: 0.00017
+  _deacreaseSpeedMultiplier: 1.07
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
