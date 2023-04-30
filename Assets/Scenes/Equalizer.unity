@@ -1917,25 +1917,143 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bbd5895ded8af48954020f4067e25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amountOfGroups: 8
   _spectrumGroups:
-  - {fileID: 42598506}
-  - {fileID: 1372914021}
-  - {fileID: 760784886}
-  - {fileID: 1020102187}
-  - {fileID: 1611220879}
-  - {fileID: 556326292}
-  - {fileID: 1542310307}
-  - {fileID: 607627471}
-  _frequencyGroupHighBorders:
-  - 50
-  - 250
-  - 1000
-  - 2000
-  - 4000
-  - 10000
-  - 20000
-  - 44100
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 42598506}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 50
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1372914021}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 250
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 760784886}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 1000
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1020102187}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 2000
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1611220879}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 4000
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 556326292}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 10000
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1542310307}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 20000
+    GroupValue: 0
+  - UpdateSpectrumGroup:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 607627471}
+          m_TargetAssemblyTypeName: SpectrumGroup, Assembly-CSharp
+          m_MethodName: SetSpectrumValue
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HighBorder: 44100
+    GroupValue: 0
   _useFiltering: 0
   _a: 0.8
   _h: 1
@@ -3657,7 +3775,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 662207937}
         m_TargetAssemblyTypeName: SpectrumGroupsManager, Assembly-CSharp
-        m_MethodName: UpdateAudioGroups
+        m_MethodName: UpdateSpectrumGroups
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

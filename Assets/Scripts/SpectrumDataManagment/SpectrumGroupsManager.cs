@@ -1,16 +1,21 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public sealed class SpectrumGroupsManager : MonoBehaviour
 {
     [Header("SpectrumGroupsSettins")]
 
-    [SerializeField] private int _amountOfGroups = 8;
+    [SerializeField] private Group[] _spectrumGroups; 
+    
+    [System.Serializable] 
+    private struct Group
+    {
+        public UnityEvent<float> UpdateSpectrumGroup;
+        
+        public float HighBorder;
 
-    [SerializeField] private SpectrumGroup[] _spectrumGroups; 
-
-    private float[] _frequencyGroups;
-
-    [SerializeField] private float[] _frequencyGroupHighBorders;
+        [HideInInspector] public float GroupValue;
+    }
 
     [Header("FilteringSettings")]
 
@@ -30,37 +35,32 @@ public sealed class SpectrumGroupsManager : MonoBehaviour
 
     [SerializeField] private SpectrumDataManager _spectrumDataManager;
 
-    private void Awake()
-    {
-        _frequencyGroups = new float[_amountOfGroups];
+    private void Awake() => CreateKalmanFilters();
 
-        CreateKalmanFilters();
-    }
+    private void OnValidate() => CreateKalmanFilters();
 
     public void CreateKalmanFilters()
     {
-        _filters = new KalmanFilter[_amountOfGroups];
+        _filters = new KalmanFilter[_spectrumGroups.Length];
 
-        for (int i = 0; i <_amountOfGroups; i++)
+        for (int i = 0; i < _spectrumGroups.Length; i++)
         {
             _filters[i] = new KalmanFilter(_a, _h, _filtrationStrength, _maxPossibleNoiseValue);
         }
     }
 
-    public void UpdateAudioGroups()
+    public void UpdateSpectrumGroups()
     {
         CreateFrequencyGroups();
 
-        for (int i = 0; i < _amountOfGroups; i++)
+        for (int i = 0; i < _spectrumGroups.Length; i++)
         {
-            _spectrumGroups[i].SetSpectrumValue(_frequencyGroups[i]);
+            _spectrumGroups[i].UpdateSpectrumGroup.Invoke(_spectrumGroups[i].GroupValue);
         }
     }
 
     private void CreateFrequencyGroups()
     {
-        int count = 0;
-
         float[] samples = _spectrumDataManager.GetSamples();
 
         int sampleRange = _spectrumDataManager.GetSampleRange();
@@ -71,12 +71,12 @@ public sealed class SpectrumGroupsManager : MonoBehaviour
 
         int sampleIndex = 0;
 
-        for (int x = 0; x < _amountOfGroups; x++)
+        for (int x = 0; x < _spectrumGroups.Length; x++)
         {
             float groupAverage = 0f;
             int sampleCount = 0;
 
-            while (currentFrequency < _frequencyGroupHighBorders[x] && sampleIndex < samples.Length)
+            while (currentFrequency < _spectrumGroups[x].HighBorder && sampleIndex < samples.Length)
             {
                 groupAverage += samples[sampleIndex++] * (sampleIndex + 1);
 
@@ -87,8 +87,9 @@ public sealed class SpectrumGroupsManager : MonoBehaviour
 
             groupAverage /= sampleCount;
 
-            if (_useFiltering == true) _frequencyGroups[x] = _filters[x].Filter(groupAverage);
-            else _frequencyGroups[x] = groupAverage;
+            if (_useFiltering == true) groupAverage = _filters[x].Filter(groupAverage);
+            
+            _spectrumGroups[x].GroupValue = groupAverage;
         }
     }
 }
